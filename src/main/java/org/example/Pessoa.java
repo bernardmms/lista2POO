@@ -2,11 +2,12 @@ package org.example;
 
 public class Pessoa {
     private String nome;
-    private int idade = 0;         // em anos
-    private int altura = 0;        // em centímetros
-    private double peso = 0.0;     // em quilos
+    private int idade = 0; // em anos
+    private int altura = 0; // em centímetros
+    private double peso = 0.0; // em quilos
 
-    public Pessoa() {}
+    public Pessoa() {
+    }
 
     public String getNome() {
         return nome;
@@ -40,23 +41,17 @@ public class Pessoa {
         this.peso = peso;
     }
 
-    /** Aumenta a idade em um ano. */
     public void envelhecer() {
         this.idade++;
     }
 
-    /**
-     * Cresce 1 cm se tiver menos de 21 anos.
-     */
+    // Cresce 1 cm se tiver menos de 21 anos
     public void crescer() {
         if (this.idade < 21) {
             this.altura++;
         }
     }
 
-    /**
-     * Ganha peso em quilos (valor deve ser positivo).
-     */
     public void ganhar_peso(double quilos) {
         if (quilos <= 0) {
             throw new IllegalArgumentException("Peso a ganhar deve ser positivo");
@@ -64,9 +59,6 @@ public class Pessoa {
         this.peso += quilos;
     }
 
-    /**
-     * Perde peso em quilos (valor deve ser positivo e não ultrapassar o peso atual).
-     */
     public void perder_peso(double quilos) {
         if (quilos <= 0) {
             throw new IllegalArgumentException("Peso a perder deve ser positivo");

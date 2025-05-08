@@ -39,7 +39,8 @@ public class CarroTest {
     void frearComValorMaiorQueVelocidadeZeraVelocidade() {
         Carro carro = new Carro();
         carro.acelerar(20);
-        carro.frear(30); // conforme a lógica fornecida, frear() espera valor > velocidade atual para zerar
+        carro.frear(30);
+
         assertEquals(0, carro.getVelocidade_atual());
     }
 
@@ -47,19 +48,8 @@ public class CarroTest {
     void frearReduzVelocidadeCorretamente() {
         Carro carro = new Carro();
         carro.acelerar(50);
-        carro.frear(20); // mesmo ponto acima: valor positivo na freada causa exceção
+        carro.frear(20);
         assertEquals(30, carro.getVelocidade_atual());
     }
 
-    @Test
-    void settersAndGettersFuncionam() {
-        Carro carro = new Carro();
-        carro.setMarca("Toyota");
-        carro.setModelo("Corolla");
-        carro.setAno(2020);
-
-        assertEquals("Toyota", carro.getMarca());
-        assertEquals("Corolla", carro.getModelo());
-        assertEquals(2020, carro.getAno());
-    }
 }

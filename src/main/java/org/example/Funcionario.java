@@ -6,7 +6,8 @@ public class Funcionario {
     private double salario;
     private String departamento;
 
-    public Funcionario() {}
+    public Funcionario() {
+    }
 
     public String getNome() {
         return nome;
@@ -40,9 +41,6 @@ public class Funcionario {
         this.departamento = departamento;
     }
 
-    /**
-     * Aplica aumento percentual ao salário.
-     */
     public void receber_aumento(double percentual) {
         if (percentual < 0) {
             throw new IllegalArgumentException("Percentual não pode ser negativo");
@@ -50,22 +48,15 @@ public class Funcionario {
         this.salario += this.salario * (percentual / 100.0);
     }
 
-    /**
-     * Muda o departamento.
-     */
     public void mudar_departamento(String novo_departamento) {
         this.departamento = novo_departamento;
     }
 
-    /**
-     * Exibe dados no console.
-     */
     public void exibir_dados() {
         System.out.println(
                 "Nome: " + nome +
                         ", Cargo: " + cargo +
                         ", Salário: " + salario +
-                        ", Departamento: " + departamento
-        );
+                        ", Departamento: " + departamento);
     }
 }

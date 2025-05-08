@@ -6,7 +6,8 @@ public class Produto {
     private int quantidade_estoque = 0;
     private String categoria;
 
-    public Produto() {}
+    public Produto() {
+    }
 
     public String getNome() {
         return nome;
@@ -40,9 +41,6 @@ public class Produto {
         this.categoria = categoria;
     }
 
-    /**
-     * Soma quantidade ao estoque; quantidade deve ser positiva.
-     */
     public void adicionar_estoque(int quantidade) {
         if (quantidade <= 0) {
             throw new IllegalArgumentException("Quantidade para adicionar deve ser positiva");
@@ -50,9 +48,6 @@ public class Produto {
         this.quantidade_estoque += quantidade;
     }
 
-    /**
-     * Remove quantidade do estoque se houver suficiente.
-     */
     public void remover_estoque(int quantidade) {
         if (quantidade <= 0) {
             throw new IllegalArgumentException("Quantidade para remover deve ser positiva");
@@ -63,9 +58,6 @@ public class Produto {
         this.quantidade_estoque -= quantidade;
     }
 
-    /**
-     * Aplica desconto percentual ao preço (0–100).
-     */
     public void aplicar_desconto(double percentual) {
         if (percentual < 0 || percentual > 100) {
             throw new IllegalArgumentException("Percentual de desconto inválido");
